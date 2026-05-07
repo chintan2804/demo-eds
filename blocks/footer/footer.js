@@ -37,34 +37,16 @@ function decorateSocialLinks(socialTable) {
     link.rel = 'noopener noreferrer';
     if (label) link.setAttribute('aria-label', label);
 
-    // Use dragged/dropped picture or img from DA column 1
-    const picture = iconCell.querySelector('picture');
+    // Only use <img> from column 1, skip if not present
     const authoredImg = iconCell.querySelector('img');
-
-    if (picture) {
-      const cloned = picture.cloneNode(true);
-      const img = cloned.querySelector('img');
-      if (img && label) img.alt = label;
-      link.append(cloned);
-    } else if (authoredImg) {
+    if (authoredImg) {
       const img = authoredImg.cloneNode(true);
       img.alt = label || img.alt || '';
       img.loading = 'lazy';
       link.append(img);
-    } else {
-      // Fallback: text icon name e.g. "facebook"
-      const iconName = iconCell.textContent.trim().toLowerCase();
-      if (!iconName) return;
-      const img = document.createElement('img');
-      img.src = `/icons/${iconName}.svg`;
-      img.alt = label || iconName;
-      img.loading = 'lazy';
-      img.width = 20;
-      img.height = 20;
-      link.append(img);
+      list.append(link);
     }
-
-    list.append(link);
+    // If no <img>, skip this row (no fallback)
   });
 
   socialTable.replaceChildren(list);
