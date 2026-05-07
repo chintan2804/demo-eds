@@ -24,6 +24,7 @@ footer .footer p {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-right: 32px;
 }
 
 /* Social links inside footer */
@@ -61,12 +62,21 @@ footer .footer p {
     padding-inline: 20px;
   }
 
+  .footer .social-links-container{
+   display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+
   .footer-wrapper .default-content-wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-right: 0px
   }
+
 
   footer .footer p {
     color: #fff;
