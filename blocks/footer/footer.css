@@ -21,31 +21,28 @@ footer .footer p {
 }
 
 /* Social links inside footer */
-.footer-wrapper .footer-social {
-  margin-left: 16px;
-}
-
-.footer-wrapper .footer-social-list {
+.footer-social-list {
   display: flex;
+  gap: 16px;
+  justify-content: center;
   align-items: center;
-  gap: 12px;
 }
 
-.footer-wrapper .footer-social-list a {
+.footer-social-list a {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  color: white;
+  gap: 8px; /* space between text and icon */
   text-decoration: none;
-  line-height: 0;
+  color: inherit;
+  font-size: 1rem; /* adjust as needed */
 }
 
-.footer-wrapper .footer-social-list img,
-.footer-wrapper .footer-social-list picture {
+.footer-social-list img {
+  width: 24px;
+  height: 24px;
   display: block;
-  width: 20px;
-  height: 20px;
 }
+
 
 @media (width >= 900px) {
   footer .footer > div {

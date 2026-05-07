@@ -40,6 +40,7 @@ function decorateSocialLinks(socialTable) {
     // Only use <img> from column 1, skip if not present
     const authoredImg = iconCell.querySelector('img');
     if (authoredImg) {
+      if (label) link.append(document.createTextNode(label + ' ')); // Add label text before icon
       const img = authoredImg.cloneNode(true);
       img.alt = label || img.alt || '';
       img.loading = 'lazy';
